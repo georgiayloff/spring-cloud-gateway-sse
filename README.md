@@ -1,4 +1,4 @@
-# Test end-to-end SSE connection
+# Test SSE connection with spring-cloud-gateway
 
 ## Components
 
@@ -21,7 +21,7 @@
 `ionic serve`
 
 
-## Connection:
+## Connection
 
 1. Ionic app connects to gateway (localhost:8080/sse)
 2. Gateway routes the request to push-service (localhost:8887/sse)
