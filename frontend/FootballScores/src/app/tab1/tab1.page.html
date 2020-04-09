@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab One
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label>Events received over SSE</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let message of messages">
+        Event #{{message.counter}} : type = {{message.payload.type}}; data = {{message.payload.data}}
+      </ion-item>
+    </ion-list>
+</ion-content>

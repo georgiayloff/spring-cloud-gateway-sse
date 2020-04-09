@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: '*'
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowHeaders: '*'
+      routes:
+        - id: sse
+          uri: http://localhost:8887
+          predicates:
+            - Path=/sse/**
+          filters:
+            - SetResponseHeader=Access-Control-Allow-Credentials, true
+            - ModifyResponseOrigin
+      default-filters:
+#        - RemoveReqsuestHeader=Cookie
+#        - DedupeResponseHeader=Access-Control-Allow-Origin
+
